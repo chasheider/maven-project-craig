@@ -28,8 +28,8 @@
     <configuration>
         <deploymentType>cloudhub</deploymentType>
         <muleVersion>3.9.1</muleVersion>
-        <username>username</username>
-        <password>password</password>
+        <username>${uid}</username>
+        <password>${pwd}</password>
         <workerType>Micro</workerType>
         <redeploy>true</redeploy>
         <environment>Sandbox</environment>
