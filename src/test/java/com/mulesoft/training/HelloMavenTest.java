@@ -21,16 +21,17 @@ public class HelloMavenTest extends FunctionalTestCase {
     }
     
     @Override
-    protected String getConfigFile() {
-        return "maven-project.xml";
+    protected String[] getConfigFiles() {
+        String[] files = { "maven-project.xml", "common-resources.xml"};
+        return files;
     }
     
     @Test
     public void retrieveFlightsAddsAppropriateHeader() throws Exception {
     	System.out.println("\n\nTest case #2 --------> Http port = " + myPort.getNumber() + "\n\n");
     	MuleEvent event = runFlow("retrieveFlights");
-    String contentType = event.getMessage().getOutboundProperty("Content-Type");
-    assertEquals("application/json", contentType);
+	    String contentType = event.getMessage().getOutboundProperty("Content-Type");
+	    assertEquals("application/json", contentType);
     }
 
 }
